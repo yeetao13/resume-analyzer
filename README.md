@@ -8,9 +8,12 @@ This repository contains a Python script (`test.py`) that evaluates resumes, pro
 - **Detailed Analysis**: Match resumes to job descriptions and provide a detailed fit analysis.
 
 ## Prerequisites
+
 ### Python Version
 - Python 3.8 or later
+
 ### Required Libraries
 Install the required dependencies:
 ```bash
 pip install PyPDF2 sentence-transformers langchain faiss-cpu
+```
