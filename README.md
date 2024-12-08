@@ -46,3 +46,6 @@ pip install PyPDF2 sentence-transformers langchain faiss-cpu
       ```bash
       python test.py
       ```
+
+##Usage 2 (Streamlit)
+
