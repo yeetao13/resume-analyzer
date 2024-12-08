@@ -20,9 +20,7 @@ pip install PyPDF2 sentence-transformers langchain faiss-cpu numpy json
 ```
 
 ### Ollama 
-
 The script requires **Ollama Llama 3.2**, a local language model that must be set up and running on your machine.
-
 #### Steps to Set Up Ollama
 
 1. **Install Ollama**:
