@@ -16,8 +16,23 @@ This repository contains a Python script (`test.py`) that evaluates resumes, pro
 ### Required Libraries
 Install the required dependencies:
 ```bash
-pip install PyPDF2 sentence-transformers langchain faiss-cpu
+pip install PyPDF2 sentence-transformers langchain faiss-cpu numpy json  
 ```
+
+### Ollama 
+
+The script requires **Ollama Llama 3.2**, a local language model that must be set up and running on your machine.
+
+#### Steps to Set Up Ollama
+
+1. **Install Ollama**:
+   - Visit the [Ollama website](https://ollama.ai/) and follow the installation instructions for your operating system (available for macOS, Linux, and Windows).
+
+2. **Pull the Llama 3.2 Model**:
+   Run the following command to pull the required model:
+   ```bash
+   ollama pull llama3.2
+   ```
 
 ## Usage 1
 
