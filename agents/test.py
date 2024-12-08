@@ -11,7 +11,7 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 # Example: Load the PDF file
-resume_path = "../resume/Resume.pdf"
+resume_path = "../resume/business-resume.pdf"
 resume_text = extract_text_from_pdf(resume_path)
 
 # print("Extracted Resume Text:")
