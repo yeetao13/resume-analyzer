@@ -42,6 +42,7 @@ pip install PyPDF2 sentence-transformers langchain faiss-cpu
      ```
 
 3. **Execute the script using the following command**:
-```bash
-python test.py
-```
+   - Example:
+      ```bash
+      python test.py
+      ```
