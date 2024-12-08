@@ -24,7 +24,7 @@ recommenderAgent = RecommenderAgent()
 recommendation = recommenderAgent.generate_recommendation(resume_text)
 
 analyzerAgent = AnalyzerAgent(resume_text=resume_text)
-analyzerAgent.load_job_descriptions("../jd")
+analyzerAgent.load_job_descriptions("../job-description")
 analyzerAgent.split_text_into_chunks()
 analyzerAgent.generate_embeddings()
 analyzerAgent.initialize_vectorstore()
