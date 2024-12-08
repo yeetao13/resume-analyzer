@@ -18,3 +18,30 @@ Install the required dependencies:
 ```bash
 pip install PyPDF2 sentence-transformers langchain faiss-cpu
 ```
+
+## Usage 1
+
+1. **Replace the Resume**:
+   - Place the resume you want to evaluate in the `resume/` folder.
+   - Ensure the file is in PDF format.
+   - Example:
+     ```
+     project/resume/
+     └── my-resume.pdf
+     ```
+
+2. **Add Job Descriptions**:
+   - Place the job descriptions you want to match the resume against in the `job-description/` folder.
+   - Ensure all job descriptions are in PDF format.
+   - Example:
+     ```
+     project/job-description/
+     ├── jd1.pdf
+     ├── jd2.pdf
+     └── jd3.pdf
+     ```
+
+3. **Execute the script using the following command**:
+```bash
+python test.py
+```
