@@ -16,7 +16,7 @@ This repository contains a Python script (`test.py`) that evaluates resumes, pro
 ### Required Libraries
 Install the required dependencies:
 ```bash
-pip install PyPDF2 sentence-transformers langchain faiss-cpu numpy json  
+pip install PyPDF2 sentence-transformers langchain faiss-cpu numpy json streamlit 
 ```
 
 ### Ollama 
@@ -64,4 +64,18 @@ The script requires **Ollama Llama 3.2**, a local language model that must be se
 
 ## Usage 2 (Streamlit)
 
-### ... ...
+1. **Add Resume**:
+   - Upload the resume you want to evaluate directly via the Streamlit web interface.
+   - Ensure the file is in PDF format.
+
+2. **Add Job Descriptions**:
+   - Upload the job descriptions you want to match the resume against directly via the Streamlit web interface.
+   - Ensure all job descriptions are in PDF format.
+   - Ensure each PDF file contains a job description only.
+
+3. **Run the Streamlit Application**:
+   - Execute the Streamlit app using the following command:
+     ```bash
+     streamlit run app.py
+     ```
+     
