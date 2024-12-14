@@ -1,6 +1,6 @@
 # Resume Evaluation and Recommendation Script
 
-This repository contains a Python script (`test.py`) that evaluates resumes, provides recommendations for improvement and analyzes their fit against job descriptions using large language models (LLMs).
+This repository contains a Python script (`test.py`) and a Streamlit script (`app.py`) that evaluates resumes, provides recommendations for improvement and analyzes their fit against job descriptions using large language models (LLMs).
 
 ## Features
 
@@ -56,8 +56,7 @@ The script requires **Ollama Llama 3.2**, a local language model that must be se
      └── jd3.pdf
      ```
 
-3. **Execute the script using the following command**:
-   - Inside 'agent' folder.
+3. **Execute the script using the following command inside 'agent' folder**:
    - Example:
       ```bash
       python test.py
