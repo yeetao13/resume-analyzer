@@ -57,6 +57,7 @@ The script requires **Ollama Llama 3.2**, a local language model that must be se
      ```
 
 3. **Execute the script using the following command**:
+   - Inside 'agent' folder.
    - Example:
       ```bash
       python test.py
