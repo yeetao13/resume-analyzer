@@ -35,20 +35,54 @@ class AnalyzerAgent:
             text += page.extract_text()
         return text
 
-    def load_job_descriptions(self, pdf_dir):
+    # def load_job_descriptions(self, pdf_dir):
+    #     """
+    #     Extract text from all PDFs in a directory.
+    #     """
+    #     # pdf_texts = {}
+    #     for filename in os.listdir(pdf_dir):
+    #         if filename.endswith(".pdf"):
+    #             pdf_path = os.path.join(pdf_dir, filename)
+    #             self.pdf_texts[filename] = self.extract_text_from_pdf(pdf_path)
+    #     print("+"*50)
+    #     print(len(self.pdf_texts))
+    #     print(self.pdf_texts)
+    #     print("+"*50)
+    #     # return pdf_texts
+
+    def load_job_descriptions(self, input_source):
         """
-        Extract text from all PDFs in a directory.
+        Extract text from PDFs provided as a directory or as a dictionary of filenames and file contents.
         """
-        # pdf_texts = {}
-        for filename in os.listdir(pdf_dir):
-            if filename.endswith(".pdf"):
-                pdf_path = os.path.join(pdf_dir, filename)
-                self.pdf_texts[filename] = self.extract_text_from_pdf(pdf_path)
-        print("+"*50)
+        self.pdf_texts = {}
+
+        if isinstance(input_source, str):  # Handle directory input
+            if not os.path.isdir(input_source):
+                raise ValueError(f"The provided path '{input_source}' is not a valid directory.")
+            
+            for filename in os.listdir(input_source):
+                if filename.endswith(".pdf"):
+                    pdf_path = os.path.join(input_source, filename)
+                    self.pdf_texts[filename] = self.extract_text_from_pdf(pdf_path)
+        elif isinstance(input_source, dict):  # Handle dictionary of filenames and file contents
+            for filename, file_content in input_source.items():
+                if filename.endswith(".pdf"):
+                    if isinstance(file_content, bytes):  # Handle binary data
+                        with open(f"temp_{filename}", "wb") as temp_pdf:  # Temporarily save the file
+                            temp_pdf.write(file_content)
+                        self.pdf_texts[filename] = self.extract_text_from_pdf(f"temp_{filename}")
+                        os.remove(f"temp_{filename}")  # Clean up the temporary file
+                    elif isinstance(file_content, str):  # Handle already-extracted text
+                        self.pdf_texts[filename] = file_content
+                    else:
+                        raise TypeError("File content must be either a bytes-like object or an extracted text string.")
+        else:
+            raise TypeError("The input source must be either a directory path (str) or a dictionary of filenames and file contents.")
+
+        print("+" * 50)
         print(len(self.pdf_texts))
         print(self.pdf_texts)
-        print("+"*50)
-        # return pdf_texts
+        print("+" * 50)
 
     def split_text_into_chunks(self, chunk_size=500, chunk_overlap=50):
         """
